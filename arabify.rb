@@ -30,12 +30,15 @@ class Arabify
   end
 
   def rollback(str)
-    str
-      .gsub('፼፻', '፼፩፻')
-      .gsub(/^፻/, '፩፻')
-      .gsub('፼፼', '፼ ፼')
-      .gsub('፼፼', '፼ ፼')
-      .gsub(/^፼/, '፩፼')
+    separate_10000(
+      str
+        .gsub('፼፻', '፼፩፻')
+        .gsub(/^፻/, '፩፻')
+        .gsub(/^፼/, '፩፼'))
+  end
+
+  def separate_10000(str)
+    separate_10000(str.gsub('፼፼', '፼ ፼')) until str.include?('፼፼')
   end
 
   def numhash
