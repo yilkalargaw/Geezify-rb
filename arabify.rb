@@ -39,7 +39,10 @@ class Arabify
   end
 
   def separate_10000(str)
-    separate_10000(str.gsub('፼፼', '፼ ፼')) until str.include?('፼፼')
+    str.gsub('፼፼', '፼ ፼')
+       .gsub('፼፼', '፼ ፼')
+       .gsub('፼፼', '፼ ፼')
+       .gsub('፼፼', '፼ ፼')
   end
 
   def numhash
