@@ -8,12 +8,19 @@ class Arabify
   end
 
   def arabify
-    split_by_100_and_padd(split_by_10000s(rollback(@geezstrstr)))
+    preprocess(@geezstrstr)
       .map { |x| x[0] * 100 + x[1] }
-      .reverse.each_with_index.map { |x, i| x * (10_000**i) } .sum
+      .reverse
+      .each_with_index
+      .map { |x, i| x * (10_000**i) }
+      .sum
   end
 
   private
+
+  def preprocess(str)
+    split_by_100_and_padd(split_by_10000s(rollback(str)))
+  end
 
   def convert_2digit(str)
     str.split('').sum { |x| numhash[x] }
