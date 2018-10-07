@@ -5,7 +5,7 @@ require_relative 'test_case'
 
 class GeezifyTest < Minitest::Test
   def test_geezify_for_all_test_cases
-    geezNumberTestDataProvider
+    TESTDATA
       .map { |x| assert_equal x[1], Geezify.new(x[0]).geezify }
   end
 end
