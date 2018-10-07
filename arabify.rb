@@ -32,8 +32,12 @@ class Arabify
 
   def split_by_100_and_padd(str)
     str.map { |x| x[-1] == '፻' ? x << ' ' : x }
-       .map { |x| x.split('፻').map { |y| convert_2digit(y) } }
+       .map { |x| convert_each_2_digit(x.split('፻')) }
        .each { |x| x.length == 1 && x.prepend(0) }
+  end
+
+  def convert_each_2_digit(arr)
+    arr.map { |y| convert_2digit(y) }
   end
 
   def rollback(str)
