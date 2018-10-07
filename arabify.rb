@@ -3,6 +3,13 @@
 
 # This class contains the processing tools to convert  Geeze numbers to arabic.
 class Arabify
+
+  @@numhash = Hash['፩' => 1, '፪' => 2, '፫' => 3, '፬' => 4,
+                   '፭' => 5, '፮' => 6, '፯' => 7, '፰' => 8,
+                   '፱' => 9, '፲' => 10, '፳' => 20, '፴' => 30,
+                   '፵' => 40, '፶' => 50, '፷' => 60, '፸' => 70,
+                   '፹' => 80, '፺' => 90, ' ' => 0]
+
   def initialize(str)
     @geezstrstr = str
   end
@@ -23,7 +30,7 @@ class Arabify
   end
 
   def convert_2digit(str)
-    str.split('').sum { |x| numhash[x] }
+    str.split('').sum { |x| @@numhash[x] }
   end
 
   def split_by_10000s(str)
@@ -50,15 +57,7 @@ class Arabify
   end
 
   def separate_10000(str)
-    str.include?('፼፼') && str.gsub!('፼፼', '፼ ፼') while str.include?('፼፼')
+    str.gsub!('፼፼', '፼ ፼') while str.include?('፼፼')
     str
-  end
-
-  def numhash
-    Hash['፩' => 1, '፪' => 2, '፫' => 3, '፬' => 4,
-         '፭' => 5, '፮' => 6, '፯' => 7, '፰' => 8,
-         '፱' => 9, '፲' => 10, '፳' => 20, '፴' => 30,
-         '፵' => 40, '፶' => 50, '፷' => 60, '፸' => 70,
-         '፹' => 80, '፺' => 90, ' ' => 0]
   end
 end
