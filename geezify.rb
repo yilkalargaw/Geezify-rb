@@ -3,7 +3,7 @@
 
 # This class contains the processing tools to convert arabic numbers to Geeze.
 class Geezify
-  ERROR_MSG_CONSTRUCTOR = 'invalid input the the input is not a number'.freeze
+  ERROR_MSG_CONSTRUCTOR = 'invalid input the input is not a number'.freeze
   ERROR_MSG1 = 'invalid input to method geezify_2digit'.freeze
   ERROR_MSG2 = 'invalid input to geezify_4digit'.freeze
 
