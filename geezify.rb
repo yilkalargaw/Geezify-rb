@@ -15,7 +15,7 @@ class Geezify
   end
 
   def geezify
-    clean_up_uncessary_1s(geezify_with_1s)
+    clean_up_uncessary_1s geezify_with_1s(@num)
   end
 
   private
@@ -34,12 +34,11 @@ class Geezify
     num.digits(100).reverse.map { |x| geezify_2digit(x) }.join('፻')
   end
 
-  def geezify_with_1s
-    @num.digits(10_000).reverse.map { |x| geezify_4digit(x) }.join('፼')
+  def geezify_with_1s(num)
+    num.digits(10_000).reverse.map { |x| geezify_4digit(x) }.join('፼')
   end
 
   def clean_up_uncessary_1s(num)
     num.gsub('፼፩፻', '፼፻').gsub(/^፩፼/, '፼').gsub(/^(፩፻)/, '፻') || num
   end
-end
 end
