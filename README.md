@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 GeezifyRb::geezify(12)                   #=> '፲፪'
 GeezifyRb::geezify(3033)                 #=> '፴፻፴፫'
 GeezifyRb::geezify(100200000)            #=> '፼፳፼'
