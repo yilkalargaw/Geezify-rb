@@ -21,14 +21,15 @@ Or install it yourself as:
 ## Usage
 
 ```
-Geezify-rb::geezify(12)                   #=> '፲፪'
-Geezify-rb::geezify(3033)                 #=> '፴፻፴፫'
-Geezify-rb::geezify(100200000)            #=> '፼፳፼'
-Geezify-rb::geezify(333333333)            #=> '፫፼፴፫፻፴፫፼፴፫፻፴፫'
-Geezify-rb::Arabify('፲፪')                 #=> 12
-Geezify-rb::Arabify('፴፻፴፫')               #=> 3033
-Geezify-rb::Arabify('፼፳፼')                #=> 100200000
-Geezify-rb::Arabify('፫፼፴፫፻፴፫፼፴፫፻፴፫')      #=> 333333333
+GeezifyRb::geezify(12)                   #=> '፲፪'
+GeezifyRb::geezify(3033)                 #=> '፴፻፴፫'
+GeezifyRb::geezify(100200000)            #=> '፼፳፼'
+GeezifyRb::geezify(333333333)            #=> '፫፼፴፫፻፴፫፼፴፫፻፴፫'
+GeezifyRb::Arabify('፲፪')                 #=> 12
+GeezifyRb::Arabify('፴፻፴፫')               #=> 3033
+GeezifyRb::Arabify('፼፳፼')                #=> 100200000
+GeezifyRb::Arabify('፫፼፴፫፻፴፫፼፴፫፻፴፫')      #=> 333333333
+
 ```
 
 ## Development
