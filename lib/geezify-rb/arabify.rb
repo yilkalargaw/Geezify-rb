@@ -21,6 +21,10 @@ module GeezifyRb
       @geezstr = str
     end
 
+    def self.arabify(str)
+      new(str).arabify
+    end
+
     def arabify
       preprocessed = rollback(@geezstr.gsub('፼', '፼ ')).split('፼')
 

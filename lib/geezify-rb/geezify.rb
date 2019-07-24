@@ -16,6 +16,10 @@ module GeezifyRb
       @num = num
     end
 
+    def self.geezify(num)
+      new(num).geezify
+    end
+
     def geezify
       clean_up_uncessary_1s geezify_with_1s(@num)
     end

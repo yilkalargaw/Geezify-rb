@@ -7,6 +7,6 @@ class GeezifyTest < Minitest::Test
   include GeezifyRb
   def test_geezify_for_all_test_cases
     TESTDATA
-      .map { |x| assert_equal x[1], Geezify.new(x[0]).geezify }
+      .map { |x| assert_equal x[1], GeezifyRb::Geezify.geezify(x[0]) }
   end
 end
