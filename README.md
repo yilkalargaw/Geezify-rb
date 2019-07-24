@@ -1,4 +1,4 @@
-# Geezify::Rb
+# Geezify-Rb
 
 Geezify-rb is a gem that converts geez-script numbers to arabic and viceversa.
 
