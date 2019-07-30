@@ -1,6 +1,7 @@
 # Geezify-Rb
 
-Geezify-rb is a gem that converts geez-script numbers to arabic and viceversa.
+Geezify-rb is a gem that converts geez-script numbers to arabic and viceversa. You could read more about the number system at
+[https://www.geez.org](https://www.geez.org/Numerals/)
 
 ## Installation
 
