@@ -1,14 +1,13 @@
 #!/usr/bin/ruby
 # coding: utf-8
-
+# frozen_string_literal:true
 
 module GeezifyRb
 
-  # This class contains the processing tools to convert  Geeze numbers to arabic.
+  #  processing tools to convert  Geeze numbers to arabic.
   class Arabify
-
-    ERROR_MSG_CONSTRUCTOR = 'invalid input the string is not a geez number'.freeze
-    ERROR_MSG1 = 'invalid input to method convert_2digit'.freeze
+    ERROR_MSG_CONSTRUCTOR = 'invalid input the string is not a geez number'
+    ERROR_MSG1 = 'invalid input to method convert_2digit'
     NUMHASH = Hash['፩' => 1,  '፪' => 2,  '፫' => 3,  '፬' => 4,
                    '፭' => 5,  '፮' => 6,  '፯' => 7,  '፰' => 8,
                    '፱' => 9,  '፲' => 10, '፳' => 20, '፴' => 30,
@@ -31,7 +30,8 @@ module GeezifyRb
       preprocessed
         .each_with_index
         .reduce(0) do |sum, (v, i)|
-        sum + convert_upto10000(v.strip) * (10_000**(preprocessed.length - 1 - i))
+        sum + convert_upto10000(v.strip) *
+              (10_000**(preprocessed.length - 1 - i))
       end
     end
 
@@ -65,14 +65,14 @@ module GeezifyRb
 
     def validinput?(str)
       str.split('')
-        .map { |x| NUMHASH.key?(x) || x == '፼' || x == '፻' }
-        .reduce(true) { |result, n| result && n }
+         .map { |x| NUMHASH.key?(x) || x == '፼' || x == '፻' }
+         .reduce(true) { |result, n| result && n }
     end
 
     def valid_for_2digit?(str)
       str.length <= 2 && str.split('')
-                           .map { |x| NUMHASH.key?(x) }
-                           .reduce(true) { |res, n| res && n }
+                            .map { |x| NUMHASH.key?(x) }
+                            .reduce(true) { |res, n| res && n }
     end
 
     def valid_for_convupto10000?(str)
