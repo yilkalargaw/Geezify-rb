@@ -30,8 +30,7 @@ module GeezifyRb
       oneth_array = Array['', '፩', '፪', '፫', '፬', '፭', '፮', '፯', '፰', '፱']
       tenth_array = Array['', '፲', '፳', '፴', '፵', '፶', '፷', '፸', '፹', '፺']
       raise ArgumentError, ERROR_MSG1 unless num.integer? &&
-                                             num >= 0 &&
-                                             num < 100
+                                             num.between?(0,99)
 
       tenth_array[(num / 10)] + oneth_array[num % 10]
     end
