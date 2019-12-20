@@ -1,15 +1,14 @@
 #!/usr/bin/ruby
 # coding: utf-8
 # frozen_string_literal:true
-module GeezifyRb
 
+module GeezifyRb
   # This class contains the processing tools to convert arabic numbers to Geeze.
   class Geezify
     ERROR_MSG_CONSTRUCTOR = 'invalid input the input is not a number'
     ERROR_MSG1 = 'invalid input to method geezify_2digit'
     ERROR_MSG2 = 'invalid input to geezify_4digit'
 
-    # constructor
     def initialize(num)
       raise ArgumentError, ERROR_MSG_CONSTRUCTOR unless num.integer?
 
@@ -30,7 +29,7 @@ module GeezifyRb
       oneth_array = Array['', '፩', '፪', '፫', '፬', '፭', '፮', '፯', '፰', '፱']
       tenth_array = Array['', '፲', '፳', '፴', '፵', '፶', '፷', '፸', '፹', '፺']
       raise ArgumentError, ERROR_MSG1 unless num.integer? &&
-                                             num.between?(0,99)
+                                             num.between?(0, 99)
 
       tenth_array[(num / 10)] + oneth_array[num % 10]
     end
