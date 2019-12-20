@@ -3,7 +3,6 @@
 # frozen_string_literal:true
 
 module GeezifyRb
-
   #  processing tools to convert  Geeze numbers to arabic.
   class Arabify
     ERROR_MSG_CONSTRUCTOR = 'invalid input the string is not a geez number'
