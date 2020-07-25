@@ -9,4 +9,11 @@ class ArabifyTest < Minitest::Test
     TESTDATA
       .map { |x| assert_equal x[0], GeezifyRb::Arabify.arabify(x[1]) }
   end
+
+  def test_arabify_then_geezify
+    TESTDATA.map do |x|
+      assert_equal x[1],
+                   GeezifyRb::Geezify.geezify(GeezifyRb::Arabify.arabify(x[1]))
+    end
+  end
 end
