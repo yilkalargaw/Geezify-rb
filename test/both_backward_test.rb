@@ -3,7 +3,7 @@ require 'minitest/autorun'
 require_relative '../lib/geezify-rb.rb'
 require_relative 'test_case'
 
-class GeezifyTest < Minitest::Test
+class GeezifyArabifyBackwardTest < Minitest::Test
   include GeezifyRb
 
   def test_geezify_then_arabify
