@@ -1,8 +1,11 @@
 language: ruby
 rvm:
-- 2.5
+- 2.7
 before_install:
 - gem install bundler
+- gem install parallel
+- gem install rake
+- gem install minitest
 - gem update --system
 install:
 - bundle install --jobs=3 --retry=3
